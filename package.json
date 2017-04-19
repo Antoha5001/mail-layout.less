@@ -1,7 +1,7 @@
 {
-  "name": "openserver.gulp",
+  "name": "mail.lessons",
   "version": "0.0.1",
-  "description": "OptimizedHTML - Start HTML Template",
+  "description": "mail.lessons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

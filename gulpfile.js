@@ -14,7 +14,8 @@ var gulp           = require('gulp'),
 		ftp            = require('vinyl-ftp'),
 		notify         = require("gulp-notify"),
 		gcmq         = require("gulp-group-css-media-queries"),
-		srv 						= 'openserver.gulp:82';
+		jade         = require("gulp-jade"),
+		srv 						= 'mail-layout.less:82';
 
 // Скрипты проекта
 
@@ -26,6 +27,14 @@ gulp.task('common-js', function() {
 	.pipe(concat('common.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('app/script'));
+});
+
+gulp.task('jade', function() {
+	return gulp.src([
+		'app/*.jade'
+		])
+	.pipe(jade())
+	.pipe(gulp.dest('app'));
 });
 
 gulp.task('js', ['common-js'], function() {
@@ -40,7 +49,7 @@ gulp.task('js', ['common-js'], function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('browser-sync',['js','css-libs'], function() {
+gulp.task('browser-sync',['js','css-libs', 'jade'], function() {
 	browserSync.init({
 		/*server: {
 			baseDir: '500303_GULP'
@@ -76,8 +85,9 @@ gulp.task('css-libs',['sass'], function(){
 				.pipe(gulp.dest('app/css'))
 				.pipe(browserSync.reload({stream:true}));
 });
-gulp.task('watch', ['css-libs', 'js', 'browser-sync'], function() {
-	gulp.watch('app/scss/**/*.scss', ['css-libs']);
+gulp.task('watch', ['css-libs', 'js', 'browser-sync', 'jade'], function() {
+	gulp.watch('app/*.jade', ['jade']);
+		gulp.watch('app/scss/**/*.scss', ['css-libs']);
 	gulp.watch(['app/script/**/*.js', 'app/script/common.min.js'], ['js']);
 	//gulp.watch('500303_GULP/*.php', browserSync.reload);
 	gulp.watch('app/**/*.php').on('change', browserSync.reload);
