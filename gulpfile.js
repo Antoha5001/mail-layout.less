@@ -29,14 +29,14 @@ gulp.task('common-js', function() {
 	.pipe(gulp.dest('app/script'));
 });
 
-gulp.task('jade', function() {
+/*gulp.task('jade', function() {
 	return gulp.src([
 		'app/*.jade'
 		])
 	.pipe(jade())
 	.pipe(gulp.dest('app'));
 });
-
+*/
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
@@ -49,7 +49,7 @@ gulp.task('js', ['common-js'], function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('browser-sync',['js','css-libs', 'jade'], function() {
+gulp.task('browser-sync',['js','css-libs', /*'jade'*/], function() {
 	browserSync.init({
 		/*server: {
 			baseDir: '500303_GULP'
@@ -85,12 +85,13 @@ gulp.task('css-libs',['sass'], function(){
 				.pipe(gulp.dest('app/css'))
 				.pipe(browserSync.reload({stream:true}));
 });
-gulp.task('watch', ['css-libs', 'js', 'browser-sync', 'jade'], function() {
-	gulp.watch('app/*.jade', ['jade']);
+gulp.task('watch', ['css-libs', 'js', 'browser-sync', /*'jade'*/], function() {
+	//gulp.watch('app/*.jade', ['jade']);
 		gulp.watch('app/scss/**/*.scss', ['css-libs']);
 	gulp.watch(['app/script/**/*.js', 'app/script/common.min.js'], ['js']);
 	//gulp.watch('500303_GULP/*.php', browserSync.reload);
 	gulp.watch('app/**/*.php').on('change', browserSync.reload);
+	gulp.watch('app/**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {

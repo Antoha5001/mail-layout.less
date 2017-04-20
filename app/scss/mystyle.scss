@@ -1,16 +1,64 @@
-@import "_library";
-@import "_reset";
-@import "_setka";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=cyrillic);
-@font-face {
-	font-family: nautilys;
-	src: url("../fonts/nautiluspompilius.ttf");
-	font-weight: 400;
-	font-style: normal;
-}
-p{
-	//color: red;
-}
+//@import "_library";
+//@import "_reset";
+//@import "_setka";
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=cyrillic);
 body{
-	//background: green;
+  padding: 0;
+  margin: 0;
+}
+.email-container{
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+.email-header{
+  background: #574943;
+  background-image: url("../images/bg.jpg");
+  //background-position: 0% 0%;
+  color: #fff;
+  padding-top: 40px;
+}
+.email-logo{
+  float: left;
+}
+.email-center{
+  margin: auto;
+  max-width: 600px;
+  padding: 0 15px;
+  text-align: center;
+}
+.email-cocial-wrapper{
+  float: right;
+  a{
+    margin-left:5px;
+  }
+}
+.email-header-title{
+  padding: 80px 0 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+.email-button{
+  display: inline-block;
+  background: #56ba5b;
+  padding: 15px 45px;
+  //width: 188px;
+  margin: 88px auto 80px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+}
+.email-content{
+}
+.email-tizer-wrapper{
+  background: #f1f1f2;
+  border-bottom: 5px solid #d5d5d5;
+  margin-top: -38px;
+  padding: 38px 0 20px;
 }
