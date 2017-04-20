@@ -2,7 +2,7 @@
 //@import "_reset";
 //@import "_setka";
 //@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=cyrillic);
-body{
+html, body, p, img{
   padding: 0;
   margin: 0;
 }
@@ -60,5 +60,15 @@ body{
   background: #f1f1f2;
   border-bottom: 5px solid #d5d5d5;
   margin-top: -38px;
-  padding: 38px 0 20px;
+  padding: 38px 0 0;
+}
+.email-tizer-item{
+vertical-align: top;
+  width: 150px;
+  //border: 1px solid black;
+  display: inline-block;
+  padding: 0 20px 20px;
+  p{
+    margin-top: 15px;
+  }
 }
