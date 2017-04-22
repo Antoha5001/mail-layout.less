@@ -80,7 +80,7 @@ vertical-align: top;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #7a695a;
-  line-height: 34px;
+  line-height: 24px;
 }
 .email-products-item{
   display: inline-block;
@@ -92,5 +92,35 @@ vertical-align: top;
     color: #fff;
     text-transform: uppercase;
     border-radius: 5px;
-    margin: 15px auto 35px;
+    margin: 15px auto 30px;
+    text-decoration: none;
+}
+.email-products-wrapper{
+  text-align: center;
+}
+.email-products-item{
+  margin-bottom: 30px;
+  max-width: 255px;
+  display: inline-block;
+  padding:0 20px;
+  border-bottom: 1px solid #f1f1f1;
+  img{
+    width: 100%;
+  }
+  p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 12px;
+  }
+}
+.email-footer{
+  padding: 15px;
+  background: #ececec;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+  p, a{
+    color: #a1a1a1;
+  }
 }
